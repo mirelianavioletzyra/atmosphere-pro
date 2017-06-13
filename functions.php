@@ -306,3 +306,11 @@ genesis_register_sidebar( array(
 	'name'        => __( 'Front Page 4', 'atmosphere-pro' ),
 	'description' => __( 'This is the 4th section on the front page.', 'atmosphere-pro' ),
 ) );
+
+
+//* Change the footer text
+add_filter('genesis_footer_creds_text', 'sp_footer_creds_filter');
+function sp_footer_creds_filter( $creds ) {
+	$creds = '[footer_copyright] &middot; Copyright &middot; Built by <a href="http://amethyst.design" title="Genesis Framework">Amethyst Design</a>';
+	return $creds;
+}
